@@ -53,7 +53,7 @@ var d1 = new Date(parsedUrl.query['iso']);
     }
     else
 	{
-         response.write(now());
+         response.write(now() + "---" + port);
         }
     
 }
