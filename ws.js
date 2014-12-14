@@ -21,7 +21,7 @@ server = http.createServer(function(request, response) {
     console.log("******* End processing request");
 
 });
-server.listen(process.argv[2]);
+server.listen(80);
 
 
 function ProcessGetRequest(request, response)
