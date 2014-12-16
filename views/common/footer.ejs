@@ -2,4 +2,15 @@
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="/" id="logout">Logout</a> 
+    <script type="text/javascript">
+    $(document).ready(function (){
+      $("#logout").click(function(event) {
+        event.preventDefault(); 
+        $.get('logout', function(html) {
+         window.location.replace("/");    
+        });
+      });
+    });
+    </script>
 </footer>

@@ -42,6 +42,18 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.post('/login', function(req, res) {
+    console.log("in post");
+    req.session.sessionId = 1;
+    res.send("logged in");
+});
+
+app.get('/logout', function(req, res) {
+        console.log("in logout");
+	req.session.destroy();
+        res.send("logged out");
+});
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/time',time);

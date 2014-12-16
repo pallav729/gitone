@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include common/head.ejs %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function (){
+      $("#loginform").submit(function(event) {
+        console.log("1");
+        event.preventDefault(); 
+        console.log("2");
+        $.post('login', $('#formId').serialize(), function(html) {
+         window.location.replace("/");    
+        });
+        
+    });
+});
+</script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form id="loginform" >
+    First name:<br>
+    <input type="text" name="firstname">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname">
+    <br><br>
+    <input type="submit" value="Submit">
+    </form> 
+    <% include common/footer.ejs %>   
+  </body>
+</html>
+
+
+
+
+
