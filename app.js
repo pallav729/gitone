@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var session = require('express-session');
 //var favicon = require('serve-favicon');
 //var logger = require('morgan');
 //var cookieParser = require('cookie-parser');
@@ -10,6 +11,14 @@ var users = require('./routes/users');
 var time = require('./routes/time');
 
 var app = express();
+
+app.use(session({
+  secret: '1234567890',
+  resave: false,
+  saveUninitialized: true
+}))
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
