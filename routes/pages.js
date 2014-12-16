@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
+  console.log(req.session.lastPage);
   if(req.session.lastPage) {
       res.render('index', { hostname: req.hostname, title: req.session.lastPage });
   }
