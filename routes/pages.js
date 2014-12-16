@@ -3,12 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  console.log(req.session.lastPage);
   if(req.session.lastPage) {
       res.render('index', { hostname: req.hostname, title: req.session.lastPage });
   }
-  res.render('index', { hostname: req.hostname, title: 'Express' });  
   req.session.lastPage = 'Already Visited';
+  res.render('index', { hostname: req.hostname, title: 'Express' });  
 });
 
 router.get('/about', function(req, res) {
