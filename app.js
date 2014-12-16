@@ -48,7 +48,7 @@ app.use('/time',time);
 
 
 //catch 404 and forward to error handler
-app.use(function(err, req, res, next) {
+app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
