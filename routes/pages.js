@@ -6,8 +6,10 @@ router.get('/', function(req, res) {
   if(req.session.lastPage) {
       res.render('index', { hostname: req.hostname, title: req.session.lastPage });
   }
-  req.session.lastPage = 'Already Visited';
-  res.render('index', { hostname: req.hostname, title: 'Express' });  
+  else {
+    req.session.lastPage = 'Already Visited';
+    res.render('index', { hostname: req.hostname, title: 'Express' });  
+  }
 });
 
 router.get('/about', function(req, res) {
